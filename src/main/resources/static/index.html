@@ -7,33 +7,46 @@
     <title>Spring boot and Angularjs Tutorial</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
- 	<link rel="stylesheet" href="/css/bootstrap-theme.css">
-    <link rel="stylesheet" href="/css/bootstrap.css"> 
-    
-    <script src="/js/bootstrap.js"></script>
-    
-    <script src="/js/app.js"></script>
-	<script src="/js/controller.js"></script> 
-	
-    <script src="../webjars/angularjs/1.4.9/angular.js"></script>
-	<script src="../webjars/angularjs/1.4.9/angular-resource.js"></script>
-	<script src="../webjars/angularjs/1.4.9/angular-route.js"></script> 	
+    <link rel="stylesheet" href="/css/app.css">
 </head>
-<body>
-<h2>Administrator Panel</h2>
-<div class="home-section">
-    <ul class="menu-list">
-     	<li><a href="#/login">LOGOWANIE</a></li>
-        <li><a href="#/users">Users</a></li>
-        <li><a href="#/roles">Roles</a></li>
-    </ul>
+<body ng-app="app">
+
+<div class="container col-lg-12">
+	
+	  <div class="row">
+			<div class = "col-lg-4"></div>
+				<div class = "col-lg-4">
+					<h2>Administrator Panel</h2>
+				</div>
+			<div class = "col-lg-4"></div>
+		</div>
+		
+		<div class="row">
+			<div class = "col-lg-4"></div>
+				<div class = "col-lg-4">
+					<ul>
+						<li>To jest tylko do testow</a></li>
+					 	<li><a href="#/login">Login</a></li>
+        				<li><a href="#/panel" >Panel</a></li>
+        			</ul>
+				</div>
+			<div class = "col-lg-4"></div>
+		</div>	
+		
+		  <div class="row">
+			<div class = "col-lg-12">
+				<div ng-view></div>
+			</div>
+					
+		</div>
+	   
 </div>
-<div ng-view ></div>
+
 <script src="/webjars/angularjs/1.4.9/angular.js"></script>
 <script src="/webjars/angularjs/1.4.9/angular-resource.js"></script>
 <script src="/webjars/angularjs/1.4.9/angular-route.js"></script>
 <script src="/js/app.js"></script>
 <script src="/js/controller.js"></script>
-<!-- <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css"> -->
- </body>
+<link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css">
+</body>
 </html>

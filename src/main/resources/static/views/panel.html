@@ -1,0 +1,78 @@
+<div class="section  col-lg-12">
+	<div class="row">
+		<div class="col-lg-4"></div>
+		<div class="liga col-lg-2">
+			<h2>Liga Pilkarksa</h2>
+		</div>
+		<div class="col-lg-3"></div>
+		<div class="col-lg-3">Kontakt nr tel 077</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<button type="button" class="btn btn-primary" id="liga1"
+				ng-click="liga('liga1')">Liga 1</button>
+		</div>
+		<div class="col-lg-4">
+			<button type="button" class="btn btn-primary" id="liga2"
+				ng-click="liga('liga2')">Liga 2</button>
+		</div>
+		<div class="col-lg-4">
+			<button type="button" class="btn btn-primary" id="liga3"
+				ng-click="liga('liga3')">Liga 3</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class=" zarzadzanie col-lg-3">
+			Zarzadzanie
+			<ul>
+				<li>Edytuj</a></li>
+				<li>Dodaj</a></li>
+				<li>itp</a></li>
+			</ul>
+		</div>
+		<div class=" score col-lg-6">
+			<table id="tableScore" class="table-bordered table-hover">
+				<thead>
+					<tr>
+						<th data-field="nameTeam">Nazwa Teamu</th>
+						<th data-field="score">Wynik</th>
+					</tr>
+					<tr ng-repeat="(nameTeam,score) in scoreTeam">
+						<td>{{ nameTeam }}</td>
+						<td>{{ score }}</td>
+					</tr>
+				</thead>
+			</table>
+		</div>
+		<div class="terminyMeczy col-lg-3">
+			<div class="OstatnieMecze row">
+				<table id="lastScore" class="table-bordered table-hover">
+					<thead>
+						<tr>
+							<th data-field="nameTeam">Nazwa Teamu</th>
+							<th data-field="date">Wynik</th>
+						</tr>
+						<tr ng-repeat="(nameTeam,date) in scoreTeam">
+							<td>{{ nameTeam }}</td>
+							<td>{{ date }}</td>
+						</tr>
+					</thead>
+				</table>
+			</div>
+			<div class="najlbizszeMecze row">
+				<table id="futureMatch" class="table-bordered table-hover">
+					<thead>
+						<tr>
+							<th data-field="nameTeam">Nazwa Teamu</th>
+							<th data-field="date">Wynik</th>
+						</tr>
+						<tr ng-repeat="(nameTeam,date) in scoreTeam">
+							<td>{{ nameTeam }}</td>
+							<td>{{ date }}</td>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
