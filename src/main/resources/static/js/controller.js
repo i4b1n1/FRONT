@@ -1,11 +1,3 @@
-app.controller('usersController', function($scope) {
-	$scope.headingTitle = "User List";
-});
-
-app.controller('rolesController', function($scope) {
-	$scope.headingTitle = "Roles List";
-});
-
 app.controller('loginController', function($scope, $http, $location) {
 
 	$scope.name = "  ";
@@ -60,4 +52,9 @@ app.controller('panelController', function($scope, $http, $location) {
 	
 	$scope.liga("glowna");
 
+});
+
+app.controller('adminController', function($scope, $http) {
+
+	
 });
