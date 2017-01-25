@@ -24,7 +24,7 @@ public class MainController {
     }
     
     @RequestMapping(value="/logging/{login}/{key}",method = RequestMethod.GET)
-    public  Map logging(@PathVariable("login") String login,@PathVariable("key") String key){
+    public  Map logging(@PathVariable("login")   String login,@PathVariable("key") String key){
     	
     	Map<String ,String> map= new HashMap<String,String>();
     	//sprawdzenie czy dane logowania sa poprawnw, jesli tak to true
@@ -34,18 +34,18 @@ public class MainController {
     }
 
     
-//    @RequestMapping(value="/scoreTeam/{teamId}",method = RequestMethod.GET)
-//    public  Map scoreTeam(@PathVariable("teamId") String teamId){
-//
-//    	Map<String ,String> map= new HashMap<String,String>();
-//    	//wchodzi id-nazwa teamu, po niej szukamy wynikow
-//    	//dla tego team
-//    	map.put("Team1","2:0");
-//    	map.put("Team2","2:1");
-//    	map.put("Team3","4:5");
-//    	map.put("Team4","3:8");
-//        return map;
-//    }
+    @RequestMapping(value="/scoreTeam/{teamId}",method = RequestMethod.GET)
+    public  Map scoreTeam(@PathVariable("teamId") String teamId){
+
+    	Map<String ,String> map= new HashMap<String,String>();
+    	//wchodzi id-nazwa teamu, po niej szukamy wynikow
+    	//dla tego team
+    	map.put("Team1","2:0");
+    	map.put("Team2","2:1");
+    	map.put("Team3","4:5");
+    	map.put("Team4","3:8");
+        return map;
+    }
     
     
     @RequestMapping(value="/scoreAll/{leagueId}",method = RequestMethod.GET)
