@@ -48,27 +48,42 @@ public class MainController {
     }
     
     
-    @RequestMapping(value="/scoreAll/{leagueId}",method = RequestMethod.GET)
+    @RequestMapping(value="/positionTeam/{leagueId}",method = RequestMethod.GET)
     public  Map score(@PathVariable("leagueId") String leagueId){
 
     	Map<String ,String> map= new HashMap<String,String>();
     	//sprawdzenie czy dane logowania sa poprawnw
-    	map.put(leagueId,"2:0");
-    	map.put("team2","2:1");
-    	map.put("team3","4:5");
-    	map.put("team4","3:8");
+    	map.put(leagueId,"brak");
+    	map.put("team1","1");
+    	map.put("team2","2");
+    	map.put("team3","3");
+    	map.put("team4","4");
+    	map.put("team5","5");
+    	map.put("team6","6");
+    	map.put("team7","7");
+    	map.put("team8","8");
+    	map.put("team9","9");
         return map;    
     }
     
-    @RequestMapping(value="/lastMatchs/{leagueId}",method = RequestMethod.GET)
+    @RequestMapping(value="/scoreMatchs/{leagueId}",method = RequestMethod.GET)
     public  Map lastMatchs(@PathVariable("leagueId") String leagueId){
 
     	Map<String ,String> map= new HashMap<String,String>();
     	//sprawdzenie czy dane logowania sa poprawnw
-    	map.put(leagueId,"2:0");
-    	map.put("team2","2:1");
-    	map.put("team3","4:5");
-    	map.put("team4","3:8");
+    	map.put(leagueId,"brak");
+    	map.put("team2q:team3","2:1");
+    	map.put("team3w:team4","4:5");
+    	map.put("team4e:team19","3:8");
+    	map.put("team2w:team3","2:1");
+    	map.put("team3gd:team4","4:5");
+    	map.put("team42:team19","3:8");
+    	map.put("team22:team3","2:1");
+    	map.put("team34:team4","4:5");
+    	map.put("team45:team19","3:8");
+    	map.put("team26:team3","2:1");
+    	map.put("team36:team4","4:5");
+    	map.put("team477:team19","3:8");
         return map;    
     }
     
@@ -77,17 +92,23 @@ public class MainController {
 
     	Map<String ,String> map= new HashMap<String,String>();
     	//sprawdzenie czy dane logowania sa poprawnw
-    	map.put(leagueId,"28 list");
-    	map.put("team2","24 list");
-    	map.put("team3","3 mar");
-    	map.put("team4","5 gr");
+    	map.put(leagueId,"28 brak");
+      	map.put("team2:team3","sty");
+    	map.put("team3:team4","luty");
+    	map.put("team4e:team19","marz");
+    	map.put("team2rr:team3","kwiec");
+    	map.put("team3qw:team4","maj");
+    	map.put("team42:team19","czerw");
+    	map.put("team22:team3","lip");
+    	map.put("team34:team4","sier");
+    	map.put("team45:team19","wrz");
+    	map.put("team26:team3","pazdz");
+    	map.put("team36:team4","list");
+    	map.put("team477:team19","grudzien");
         return map;    
     }
     
-    
-
-    
-    
+   
  
     
 }
