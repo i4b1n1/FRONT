@@ -6,13 +6,19 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class Footballer {
-
-	public Footballer(int i, String string, String string2, String string3, String string4, String string5,
-			String string6) {
-		// TODO Auto-generated constructor stub
+	public Footballer(Integer id, String name, String surname, String team, String idLeague, String position,
+			String penalties) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.surname = surname;
+		this.team = team;
+		this.idLeague = idLeague;
+		this.position = position;
+		this.penalties = penalties;
 	}
 
-	public Integer id;
+	public Integer id; 
 	
 	public String name;
 	

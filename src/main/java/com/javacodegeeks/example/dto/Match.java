@@ -9,8 +9,17 @@ import lombok.Data;
 @AllArgsConstructor
 public class Match {
 
-	public Match(int i, Team team, Team team3, String string, String string2, String string3, String string4) {
-		// TODO Auto-generated constructor stub
+
+
+	public Match(Integer id, Team team1, Team team2, String scoreT1, String scoreT2, String date, String judge) {
+		super();
+		this.id = id;
+		this.team1 = team1;
+		this.team2 = team2;
+		this.scoreT1 = scoreT1;
+		this.scoreT2 = scoreT2;
+		this.date = date;
+		this.judge = judge;
 	}
 
 	public Integer id;
