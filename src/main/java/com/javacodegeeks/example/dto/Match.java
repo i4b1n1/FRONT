@@ -2,16 +2,22 @@ package com.javacodegeeks.example.dto;
 
 import java.util.List;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 public class Match {
+
+	public Match(int i, Team team, Team team3, String string, String string2, String string3, String string4) {
+		// TODO Auto-generated constructor stub
+	}
 
 	public Integer id;
 	
-	public List<Team> listTeam1;
+	public Team team1;
 		
-	public List<Team> listTeam2;
+	public Team team2;
 	
 	public String scoreT1;
 	

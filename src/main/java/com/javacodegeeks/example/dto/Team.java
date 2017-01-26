@@ -18,7 +18,7 @@ public class Team {
 	
 	public String  idLeague;
 	
-	public String nameTeam;
+	public String name;
 	
 	public String positionInLeague;
 	

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.javacodegeeks.example.dto.Footballer;
+import com.javacodegeeks.example.dto.Match;
 import com.javacodegeeks.example.dto.Team;
 
 
@@ -39,14 +40,68 @@ public class MainController {
     }
 
     
-    @RequestMapping(value="/scoreTeam/{teamId}",method = RequestMethod.GET)
-    public  Map scoreTeam(@PathVariable("teamId") String teamId){
+//    @RequestMapping(value="/scoreTeam/{teamId}",method = RequestMethod.GET)
+//    public  Match scoreTeam(@PathVariable("teamId") String teamId){
+//    
+//    	List<Team> listTeam= new ArrayList<Team>();
+//    	List<Footballer> listFootballer = new ArrayList<Footballer>();
+//    	listFootballer.set(0, new Footballer(0,"name0","surname1","team1","0","bramkarz","brak"));
+//    	listFootballer.set(1, new Footballer(1,"name1","surname1","team1","0","gracz","brak"));
+//    	listFootballer.set(2, new Footballer(2,"name2","surname1","team1","0","gracz","brak"));
+//    	listFootballer.set(3, new Footballer(3,"name3","surname1","team1","0","gracz","brak"));
+//    	listFootballer.set(4, new Footballer(4,"name4","surname1","team1","0","gracz","brak"));
+//    	listFootballer.set(5, new Footballer(5,"name5","surname1","team1","0","gracz","brak"));
+//    	listFootballer.set(6, new Footballer(6,"name6","surname1","team1","0","gracz","brak"));
+//    	listFootballer.set(7, new Footballer(7,"name7","surname1","team1","0","gracz","brak"));
+//    	listFootballer.set(8, new Footballer(8,"name7","surname1","team1","0","gracz","brak"));
+//    	listFootballer.set(9, new Footballer(9,"name9","surname1","team1","0","gracz","brak"));
+//    	
+//    	listTeam.set(0, new Team(0,"1","team1","2",listFootballer));
+//    	listTeam.set(0, new Team(1,"1","team2","1",listFootballer));
+//    	listTeam.set(0, new Team(2,"1","team3","3",listFootballer));
+//    	listTeam.set(0, new Team(3,"2","team4","2",listFootballer));
+//    	listTeam.set(0, new Team(4,"2","team5","1",listFootballer));
+//    	listTeam.set(0, new Team(5,"3","team6","1",listFootballer));
+//    	listTeam.set(0, new Team(6,"3","team7","2",listFootballer));
+//
+//    	Match match = new Match(0,listTeam.get(0),listTeam.get(1),"2","4","wtorek pietnastego","karzel");
+//    	
+//    	return match;
+//    }
+    
+    //pozycja zespolu w lidze
+//    @RequestMapping(value="/positionTeam/{leagueId}",method = RequestMethod.GET)
+//    public  Map score(@PathVariable("leagueId") String leagueId){
+//
+//    	List<Team> listTeam= new ArrayList<Team>();
+//    	List<Footballer> listFootballer = new ArrayList<Footballer>();
+//    	listFootballer.set(0, new Footballer(0,"name0","surname1","team1","0","bramkarz","brak"));
+//    	listFootballer.set(1, new Footballer(1,"name1","surname1","team1","0","gracz","brak"));
+//    	listFootballer.set(2, new Footballer(2,"name2","surname1","team1","0","gracz","brak"));
+//    	listFootballer.set(3, new Footballer(3,"name3","surname1","team1","0","gracz","brak"));
+//    	listFootballer.set(4, new Footballer(4,"name4","surname1","team1","0","gracz","brak"));
+//    	listFootballer.set(5, new Footballer(5,"name5","surname1","team1","0","gracz","brak"));
+//    	listFootballer.set(6, new Footballer(6,"name6","surname1","team1","0","gracz","brak"));
+//    	listFootballer.set(7, new Footballer(7,"name7","surname1","team1","0","gracz","brak"));
+//    	listFootballer.set(8, new Footballer(8,"name7","surname1","team1","0","gracz","brak"));
+//    	listFootballer.set(9, new Footballer(9,"name9","surname1","team1","0","gracz","brak"));
+//    	
+//    	listTeam.set(0, new Team(0,"1","team1","2",listFootballer));
+//    	listTeam.set(0, new Team(1,"1","team2","1",listFootballer));
+//    	listTeam.set(0, new Team(2,"1","team3","3",listFootballer));
+//    	listTeam.set(0, new Team(3,"2","team4","2",listFootballer));
+//    	listTeam.set(0, new Team(4,"2","team5","1",listFootballer));
+//    	listTeam.set(0, new Team(5,"3","team6","1",listFootballer));
+//    	listTeam.set(0, new Team(6,"3","team7","2",listFootballer));
+//
+//    	Match match = new Match(0,listTeam.get(0),listTeam.get(1),"2","4","wtorek pietnastego","karzel");
+//    	
+//    	return match;    
+//    }
+    //wynik meczy w lidze
+    @RequestMapping(value="/scoreMatchs/{leagueId}",method = RequestMethod.GET)
+    public  List<Match> lastMatchs(@PathVariable("leagueId") String leagueId){
 
-    	Map<String ,String> map= new HashMap<String,String>();
-    	//wchodzi id-nazwa teamu, po niej szukamy wynikow
-    	//dla tego team
-    	//Footballer f = new Footballer();
- 
     	List<Team> listTeam= new ArrayList<Team>();
     	List<Footballer> listFootballer = new ArrayList<Footballer>();
     	listFootballer.set(0, new Footballer(0,"name0","surname1","team1","0","bramkarz","brak"));
@@ -68,67 +123,48 @@ public class MainController {
     	listTeam.set(0, new Team(5,"3","team6","1",listFootballer));
     	listTeam.set(0, new Team(6,"3","team7","2",listFootballer));
 
-        return map;
-    }
-    
-    //pozycja zespolu w lidze
-    @RequestMapping(value="/positionTeam/{leagueId}",method = RequestMethod.GET)
-    public  Map score(@PathVariable("leagueId") String leagueId){
-
-    	Map<String ,String> map= new HashMap<String,String>();
-    	//sprawdzenie czy dane logowania sa poprawnw
-    	map.put(leagueId,"brak");
-    	map.put("team1","1");
-    	map.put("team2","2");
-    	map.put("team3","3");
-    	map.put("team4","4");
-    	map.put("team5","5");
-    	map.put("team6","6");
-    	map.put("team7","7");
-    	map.put("team8","8");
-    	map.put("team9","9");
-        return map;    
-    }
-    //wynik meczy w lidze
-    @RequestMapping(value="/scoreMatchs/{leagueId}",method = RequestMethod.GET)
-    public  Map lastMatchs(@PathVariable("leagueId") String leagueId){
-
-    	Map<String ,String> map= new HashMap<String,String>();
-    	//sprawdzenie czy dane logowania sa poprawnw
-    	map.put(leagueId,"brak");
-    	map.put("team2q:team3","2:1");
-    	map.put("team3w:team4","4:5");
-    	map.put("team4e:team19","3:8");
-    	map.put("team2w:team3","2:1");
-    	map.put("team3gd:team4","4:5");
-    	map.put("team42:team19","3:8");
-    	map.put("team22:team3","2:1");
-    	map.put("team34:team4","4:5");
-    	map.put("team45:team19","3:8");
-    	map.put("team26:team3","2:1");
-    	map.put("team36:team4","4:5");
-    	map.put("team477:team19","3:8");
-        return map;    
+    	List<Match> listMatch =  new ArrayList<Match>();
+    	listMatch.set(0 ,new Match(0,listTeam.get(1),listTeam.get(2),"2","43-","--","karzel"));
+    	listMatch.set(1 ,new Match(1,listTeam.get(2),listTeam.get(3),"1","47","--","karzel1"));
+    	listMatch.set(2 ,new Match(2,listTeam.get(3),listTeam.get(4),"25","44","--","karzel3"));
+    	listMatch.set(3 ,new Match(3,listTeam.get(4),listTeam.get(5),"26","49","--","karzel4"));
+    	listMatch.set(4 ,new Match(4,listTeam.get(5),listTeam.get(6),"21","45","--","karzel7"));
+    	
+    	return listMatch;    
     }
     //data przyszlych meczy
     @RequestMapping(value="/futureMatchs/{leagueId}",method = RequestMethod.GET)
-    public  Map futureMatchs(@PathVariable("leagueId") String leagueId){
+    public  List<Match> futureMatchs(@PathVariable("leagueId") String leagueId){
 
-    	Map<String ,String> map= new HashMap<String,String>();
-    	map.put(leagueId,"28 brak");
-      	map.put("team2:team3","sty");
-    	map.put("team3:team4","luty");
-    	map.put("team4e:team19","marz");
-    	map.put("team2rr:team3","kwiec");
-    	map.put("team3qw:team4","maj");
-    	map.put("team42:team19","czerw");
-    	map.put("team22:team3","lip");
-    	map.put("team34:team4","sier");
-    	map.put("team45:team19","wrz");
-    	map.put("team26:team3","pazdz");
-    	map.put("team36:team4","list");
-    	map.put("team477:team19","grudzien");
-        return map;    
+    	List<Team> listTeam= new ArrayList<Team>();
+    	List<Footballer> listFootballer = new ArrayList<Footballer>();
+    	listFootballer.set(0, new Footballer(0,"name0","surname1","team1","0","bramkarz","brak"));
+    	listFootballer.set(1, new Footballer(1,"name1","surname1","team1","0","gracz","brak"));
+    	listFootballer.set(2, new Footballer(2,"name2","surname1","team1","0","gracz","brak"));
+    	listFootballer.set(3, new Footballer(3,"name3","surname1","team1","0","gracz","brak"));
+    	listFootballer.set(4, new Footballer(4,"name4","surname1","team1","0","gracz","brak"));
+    	listFootballer.set(5, new Footballer(5,"name5","surname1","team1","0","gracz","brak"));
+    	listFootballer.set(6, new Footballer(6,"name6","surname1","team1","0","gracz","brak"));
+    	listFootballer.set(7, new Footballer(7,"name7","surname1","team1","0","gracz","brak"));
+    	listFootballer.set(8, new Footballer(8,"name7","surname1","team1","0","gracz","brak"));
+    	listFootballer.set(9, new Footballer(9,"name9","surname1","team1","0","gracz","brak"));
+    	
+    	listTeam.set(0, new Team(0,"1","team1","2",listFootballer));
+    	listTeam.set(1, new Team(1,"1","team2","1",listFootballer));
+    	listTeam.set(2, new Team(2,"1","team3","3",listFootballer));
+    	listTeam.set(3, new Team(3,"2","team4","2",listFootballer));
+    	listTeam.set(4, new Team(4,"2","team5","1",listFootballer));
+    	listTeam.set(5, new Team(5,"3","team6","1",listFootballer));
+    	listTeam.set(6, new Team(6,"3","team7","2",listFootballer));
+    	
+    	List<Match> listMatch =  new ArrayList<Match>();
+    	listMatch.set(0 ,new Match(0,listTeam.get(1),listTeam.get(2),"2","43","--","karzel"));
+    	listMatch.set(1 ,new Match(1,listTeam.get(2),listTeam.get(3),"1","47","--","karzel1"));
+    	listMatch.set(2 ,new Match(2,listTeam.get(3),listTeam.get(4),"25","44","--","karzel3"));
+    	listMatch.set(3 ,new Match(3,listTeam.get(4),listTeam.get(5),"26","49","--","karzel4"));
+    	listMatch.set(4 ,new Match(4,listTeam.get(5),listTeam.get(6),"21","45","--","karzel7"));
+    	
+    	return listMatch;    
     }
     
    

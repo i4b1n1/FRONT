@@ -35,20 +35,28 @@ app.controller('panelController', function($scope, $http, $location, appService)
 	$scope.liga = function(id) {
 		$scope.leagueId = id;
 	
-		$http.get(url = 'http://localhost:2990/positionTeam/'+$scope.leagueId).success(function(data) {
-			$scope.positionTeam = data
-		}).error(function(data) {
-			$scope.name = "Problem z bazka";
-		});
+//		$http.get(url = 'http://localhost:2990/positionTeam/'+$scope.leagueId).success(function(data) {
+//			$scope.positionTeam = data
+//		}).error(function(data) {
+//			$scope.name = "Problem z bazka";
+//		});
 		
 		$http.get(url = 'http://localhost:2990/scoreMatchs/'+$scope.leagueId).success(function(data) {
-			$scope.scoreMatchs = data
+			$scope.scoreMatchs.id = data.id;
+			$scope.scoreMatchs.team1 = data.team1.name;
+			$scope.scoreMatchs.team2 = data.id;
+			$scope.scoreMatchs.date = data.date;
+			$scope.scoreMatchs.score = data.score1 + ":" + data.score2;
 		}).error(function(data) {
 			$scope.name = "Problem z bazka";
 		});
 		
 		$http.get(url = 'http://localhost:2990/futureMatchs/'+$scope.leagueId).success(function(data) {
 			$scope.futureMatchs = data
+			$scope.futureMatchs.id = data.id;
+			$scope.futureMatchs.team1 = data.team1.name;
+			$scope.futureMatchs.team2 = data.id;
+			$scope.futureMatchs.date = data.date;
 		}).error(function(data) {
 			$scope.name = "Problem z bazka";
 		});
