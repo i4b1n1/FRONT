@@ -1,2 +1,5 @@
-com\javacodegeeks\examples\WebAppInitializer.class
 com\javacodegeeks\examples\controller\MainController.class
+com\javacodegeeks\example\dto\Team.class
+com\javacodegeeks\example\dto\Match.class
+com\javacodegeeks\examples\WebAppInitializer.class
+com\javacodegeeks\example\dto\Footballer.class
