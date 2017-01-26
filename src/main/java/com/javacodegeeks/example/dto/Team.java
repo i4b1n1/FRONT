@@ -9,9 +9,15 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Team {
 
-	public Team(int i, String string, String string2, String string3,
-			List<Footballer> listFootballer2) {
-		// TODO Auto-generated constructor stub
+
+
+	public Team(Integer id, String idLeague, String name, String positionInLeague, List<Footballer> listFootballer) {
+		super();
+		this.id = id;
+		this.idLeague = idLeague;
+		this.name = name;
+		this.positionInLeague = positionInLeague;
+		this.listFootballer = listFootballer;
 	}
 
 	public Integer id;

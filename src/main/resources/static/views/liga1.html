@@ -46,23 +46,23 @@
 		<div class="scoreMatchs  container-fluid col-lg-4 text-center">
 			<table id="tScoreMatchs" class="table-bordered table-hover">
 				<thead>
-
 					<tr class="warning">
-						<th   class="warning" data-field="id">#</th>
-						<th  class="warning"data-field="team1">Team 1</th>
-						<th  class="warning"data-field="team2">Team 2</th>
-						<th  class="danger" data-field="date">Data</th>
-						<th  class="warning"data-field="score">Wynik</th>
-					</tr>
-					<tr class="danger"
-						ng-repeat="(date) in scoreMatchs">
-						<td>{{ date.id }}</td>
-						<td>{{ date.team1 }}</td>
-						<td>{{ date.team2 }}</td>
-						<td>{{ date.date }}</td>
-						<td>{{ date.score }}</td>
+						<th class="warning" data-field="id">#</th>
+						<th class="warning" data-field="team1">Team 1</th>
+						<th class="warning" data-field="team2">Team 2</th>
+						<th class="danger" data-field="date">Data</th>
+						<th class="warning" data-field="score">Wynik</th>
 					</tr>
 				</thead>
+				<tbody>
+					<tr class="danger" ng-repeat="data in scoreMatchs">
+						<td>{{ data.id }}</td>
+						<td>{{ data.team1.name }}</td>
+						<td>{{ data.team2.name }}</td>
+						<td>{{ data.date }}</td>
+						<td>{{ data.scoreT1 + ' : ' +  data.scoreT2 }}</td>
+					</tr>
+				</tbody>
 			</table>
 		</div>
 
@@ -71,20 +71,19 @@
 			<table id="tFutureMatch" class="table-bordered table-hover">
 				<thead>
 					<tr class="warning">
-						<th  class="danger" data-field="id">#</th>
+						<th class="danger" data-field="id">#</th>
 						<th class="danger" data-field="team1">Team 1</th>
 						<th class="danger" data-field="team2">Team 2</th>
-						<th  class="danger" data-field="date">Data</th>
+						<th class="danger" data-field="date">Data</th>
 					</tr>
-					
-					</thead>
-					<tbody>
-					<tr class="danger"
-						ng-repeat="(date) in futureMatchs">
-						<td>{{ date.id }}</td>
-						<td>{{ date.team1 }}</td>
-						<td>{{ date.team2 }}</td>
-						<td>{{ date.date }}</td>
+
+				</thead>
+				<tbody>
+					<tr class="danger" ng-repeat="data in futureMatchs">
+						<td>{{ data.id }}</td>
+						<td>{{ data.team1.name }}</td>
+						<td>{{ data.team2.name }}</td>
+						<td>{{ data.date }}</td>
 					</tr>
 				</tbody>
 			</table>
