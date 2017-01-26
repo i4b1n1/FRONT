@@ -1,6 +1,9 @@
 var app = angular.module('app', [ 'ngRoute', 'ngResource' ]);
 app.config(function($routeProvider) {
 	$routeProvider.when('/', {
+		templateUrl : '/views/panel.html',
+		controller : 'panelController'
+	}).when('/score', {
 		templateUrl : '/views/score.html',
 		controller : 'scoreController'
 	}).when('/login', {

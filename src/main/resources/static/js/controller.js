@@ -1,4 +1,7 @@
-app.controller('loginController', function($scope, $http, $location) {
+var test ="1";
+
+
+app.controller('loginController', function($scope, $http, $location, appService) {
 
 	$scope.name = "  ";
 
@@ -20,12 +23,13 @@ app.controller('loginController', function($scope, $http, $location) {
 		}).error(function(data) {
 			$scope.name = "Problem z bazka";
 		});
+		test ="adam";
 
 	}
 
 });
 
-app.controller('panelController', function($scope, $http, $location) {
+app.controller('panelController', function($scope, $http, $location, appService) {
 
 	
 	$scope.liga = function(id) {
@@ -50,11 +54,11 @@ app.controller('panelController', function($scope, $http, $location) {
 		});
 	}
 	
-	$scope.liga("glowna");
+	$scope.liga(test);
 
 });
 
-app.controller('scoreController', function($scope, $http, $location) {
+app.controller('scoreController', function($scope, $http, $location , appService) {
 	
 	$scope.liga = function(id) {
 		$scope.leagueId = id;
@@ -78,6 +82,6 @@ app.controller('scoreController', function($scope, $http, $location) {
 		});
 	}
 	
-	$scope.liga("glowna");
+	$scope.liga(test);
 	
 });
