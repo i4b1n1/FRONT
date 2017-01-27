@@ -33,10 +33,10 @@ app.controller('loginController', function($scope, $http, $location, appService)
 	 
 app.controller('panelController', function($scope, $http, $location, appService) {
 
-	$scope.al= function(){
-		alert("qqqqqqqqqqqqqqqqqqqqqqq");
-		$scope.name = "Problem z bazka";
-	}
+	$('#myModal').on('show.bs.modal', function(e) {
+
+	    alert("udalo");
+	});
 	
 	$scope.liga= function(data){
 		appService.idLeague=data;
