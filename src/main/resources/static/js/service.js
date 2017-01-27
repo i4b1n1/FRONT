@@ -1,3 +1,7 @@
 app.service('appService', function() {
-  this.idActive = 'glowna';
+  
+	this.idLeague ="Liaga1";
+
+	this.zalogowany="NO";
+
 });
