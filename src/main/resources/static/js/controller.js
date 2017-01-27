@@ -34,7 +34,7 @@ app.controller('loginController', function($scope, $http, $location, appService)
 app.controller('panelController', function($scope, $http, $location, appService) {
 
 	$('#myModal').on('show.bs.modal', function(e) {
-
+		var data= e;
 	    alert("udalo");
 	});
 	
