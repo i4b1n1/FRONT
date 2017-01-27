@@ -16,7 +16,8 @@ app.controller('loginController', function($scope, $http, $location, appService)
 				url = 'http://localhost:2990/logging/' + $scope.login + "/"
 						+ $scope.key).success(function(data) {
 			if (data.status == "true") {
-				$location.path("/panel");
+				$location.path("#/panel");
+				appService.zalogowany="YES";
 			} else {
 				$scope.name = "Nie poprawny";
 			}
@@ -29,10 +30,20 @@ app.controller('loginController', function($scope, $http, $location, appService)
 
 });
 
+	 
 app.controller('panelController', function($scope, $http, $location, appService) {
 
+	$scope.al= function(){
+		alert("qqqqqqqqqqqqqqqqqqqqqqq");
+		$scope.name = "Problem z bazka";
+	}
 	
-	$scope.liga = function(id) {
+	$scope.liga= function(data){
+		appService.idLeague=data;
+		
+	}
+	
+	$scope.getData = function(id) {
 		$scope.leagueId = id;
 	
 //		$http.get(url = 'http://localhost:2990/positionTeam/'+$scope.leagueId).success(function(data) {
@@ -62,7 +73,7 @@ app.controller('panelController', function($scope, $http, $location, appService)
 		});
 	}
 	
-	$scope.liga(test);
+	$scope.getData(appService.idLeague);
 
 });
 
@@ -90,6 +101,6 @@ app.controller('scoreController', function($scope, $http, $location , appService
 		});
 	}
 	
-	$scope.liga(test);
+//	$scope.liga(test);
 	
 });

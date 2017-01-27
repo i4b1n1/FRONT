@@ -1,3 +1,7 @@
+<script src="https://code.angularjs.org/1.4.9/angular.min.js"></script>
+<script
+	src="https://rawgit.com/dwmkerr/angular-modal-service/master/dst/angular-modal-service.js"></script>
+
 <div class="panel  col-lg-12 text-center container-fluid">
 	<div class="row">
 		<div class="col-lg-12 text-center">
@@ -7,10 +11,11 @@
 						<a class="navbar-brand" href="#">Pilkarze</a>
 					</div>
 					<ul class="nav navbar-nav">
-						<li><a href="#/panel">Glowna</a></li>
-						<li class="active"><a href="#/liga1">Liga 1</a></li>
-						<li><a href="#/liga2">Liga 2</a></li>
-						<li><a href="#/liga3">Liga 3</a></li>
+						<li><a ng-click="liga('all')" href="#/panel">Glowna</a></li>
+						<li class="active"><a ng-click="liga('l1')" href="#/liga1">Liga
+								1</a></li>
+						<li><a ng-click="liga('l2')" href="#/liga2">Liga 2</a></li>
+						<li><a ng-click="liga('l3')" href="#/liga3">Liga 3</a></li>
 					</ul>
 
 					<ul class="nav navbar-nav navbar-right">
@@ -60,7 +65,7 @@
 						<td>{{ data.team1.name }}</td>
 						<td>{{ data.team2.name }}</td>
 						<td>{{ data.date }}</td>
-						<td>{{ data.scoreT1 + ' : ' +  data.scoreT2 }}</td>
+						<td>{{ data.scoreT1 + ' : ' + data.scoreT2 }}</td>
 					</tr>
 				</tbody>
 			</table>
@@ -80,20 +85,52 @@
 				</thead>
 				<tbody>
 					<tr class="danger" ng-repeat="data in futureMatchs">
-						<td>{{ data.id }}</td>
+						<td><a ng-click="liga('l2')" href="#/liga2">{{ data.id }}</a></td>
 						<td>{{ data.team1.name }}</td>
 						<td>{{ data.team2.name }}</td>
 						<td>{{ data.date }}</td>
 					</tr>
+
 				</tbody>
 			</table>
 		</div>
 
 		<div class="  col-lg-1 text-center"></div>
+		<div class="row">
+			<div class="col-lg-12">
+				<h2>Basic Modal Example</h2>
+				<!-- Trigger the modal with a button -->
+				<button type="button" class="btn btn-info btn-lg"
+					data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="myModal" role="dialog">
+					<div class="modal-dialog">
+
+						<!-- Modal content-->
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Modal Header</h4>
+							</div>
+							<div class="modal-body">
+								<p>Some text in the modal.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default"
+									data-dismiss="modal">Close</button>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+
+			</div>
+		</div>
 
 
 	</div>
+
 </div>
-
-
 

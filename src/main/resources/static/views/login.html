@@ -7,10 +7,10 @@
 						<a class="navbar-brand" href="#">Pilkarze</a>
 					</div>
 					<ul class="nav navbar-nav">
-						<li ><a href="#/panel">Glowna</a></li>
-						<li><a href="#/liga1">Liga 1</a></li>
-						<li><a href="#/liga2">Liga 2</a></li>
-						<li><a href="#/liga3">Liga 3</a></li>
+						<li><a ng-click="liga('all')" href="#/panel">Glowna</a></li>
+						<li><a ng-click="liga('l1')" href="#/liga1">Liga 1</a></li>
+						<li><a ng-click="liga('l2')" href="#/liga2">Liga 2</a></li>
+						<li><a ng-click="liga('l3')" href="#/liga3">Liga 3</a></li>
 					</ul>
 
 					<ul class="nav navbar-nav navbar-right">
@@ -68,5 +68,7 @@
 		<div class="col-lg-5"></div>
 	</div>
 
+
+	
 </div>
 

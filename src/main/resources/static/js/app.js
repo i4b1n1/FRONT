@@ -1,7 +1,7 @@
-var app = angular.module('app', [ 'ngRoute', 'ngResource' ]);
+var app = angular.module('app', [ 'ngRoute', 'ngResource' ,'angularModalService']);
 app.config(function($routeProvider) {
 	$routeProvider.when('/', {
-		templateUrl : '/views/panel.html',
+		templateUrl : '/views/panel.html',	
 		controller : 'panelController'
 	}).when('/score', {
 		templateUrl : '/views/score.html',
@@ -20,6 +20,9 @@ app.config(function($routeProvider) {
 		controller : 'panelController'
 	}).when('/liga3', {
 		templateUrl : '/views/liga3.html',
+		controller : 'panelController'
+	}).when('/kontakt', {
+		templateUrl : '/views/kontakt.html',
 		controller : 'panelController'
 	}).otherwise({
 		redirectTo : '/'

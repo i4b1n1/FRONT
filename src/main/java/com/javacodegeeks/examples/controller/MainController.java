@@ -149,13 +149,13 @@ public class MainController {
     	listFootballer.add( new Footballer(8,"name7","surname1","team1","0","gracz","brak"));
     	listFootballer.add( new Footballer(9,"name9","surname1","team1","0","gracz","brak"));
     	
-    	listTeam.add( new Team(0,"1","team1","2",listFootballer));
-    	listTeam.add( new Team(1,"1","team2","1",listFootballer));
-    	listTeam.add( new Team(2,"1","team3","3",listFootballer));
-    	listTeam.add( new Team(3,"2","team4","2",listFootballer));
-    	listTeam.add( new Team(4,"2","team5","1",listFootballer));
-    	listTeam.add( new Team(5,"3","team6","1",listFootballer));
-    	listTeam.add( new Team(6,"3","team7","2",listFootballer));
+    	listTeam.add( new Team(0,"1",leagueId,"2",listFootballer));
+    	listTeam.add( new Team(1,"1",leagueId,"1",listFootballer));
+    	listTeam.add( new Team(2,"1",leagueId,"3",listFootballer));
+    	listTeam.add( new Team(3,"2",leagueId,"2",listFootballer));
+    	listTeam.add( new Team(4,"2",leagueId,"1",listFootballer));
+    	listTeam.add( new Team(5,"3",leagueId,"1",listFootballer));
+    	listTeam.add( new Team(6,"3",leagueId,"2",listFootballer));
 
     	List<Match> listMatch =  new ArrayList<Match>();
     	
