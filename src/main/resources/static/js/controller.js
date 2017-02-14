@@ -29,14 +29,30 @@ app.controller('loginController', function($scope, $http, $location, appService)
 	}
 
 });
-
+	
 	 
 app.controller('panelController', function($scope, $http, $location, appService) {
 
-	$('#myModal').on('show.bs.modal', function(e) {
-		var data= e;
-	    alert("udalo");
-	});
+	var infoMatch;
+	$scope.showData = function(data){
+		var infoMatch = data;
+		var team1Name = data.team1.name;
+		var team2Name = data.team2.name;
+		var listTeam1 = data.team1.listFootballer;
+		var listTeam2 = data.team2.listFootballer;
+		var team1Pos = data.team1.positionInLeague;
+		var team2Pos = data.team2.positionInLeague;
+		$scope.nameTeam1 = data.team1.name;
+		$scope.nameTeam2 = data.team2.name;
+		$scope.listFootballer1 = data.team1.listFootballer;
+		$scope.listFootballer2 = data.team2.listFootballer;
+		$scope.teamPos1 = data.team1.positionInLeague;
+		$scope.teamPos2 = data.team2.positionInLeague;		
+}
+	
+
+	
+	
 	
 	$scope.liga= function(data){
 		appService.idLeague=data;
