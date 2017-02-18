@@ -3,27 +3,18 @@
 		<div class="col-lg-12 text-center">
 			<nav class="navbar  navbar-inverse bg-inverse">
 				<div class="container-fluid">
-					<div class="navbar-header">
-						<a class="navbar-brand" href="#">Pilkarze</a>
-					</div>
 					<ul class="nav navbar-nav">
 						<li class="active"><a ng-click="liga('all')"  href="#/panel">Glowna</a></li>
 						<li><a ng-click="liga('l1')"  href="#/liga1">Liga 1</a></li>
 						<li><a ng-click="liga('l2')" href="#/liga2">Liga 2</a></li>
 						<li><a ng-click="liga('l3')" href="#/liga3">Liga 3</a></li>
+						<li><a  ng-click="create()" id="createButton">Edycja</a></li> 
 					</ul>
 
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#/kontakt">Kontakt</a></li>
 						<li><a href="#/login">Logowanie</a></li>
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown">Profil <b class="caret"></b></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Moj Profil</a></li>
-								<li><a href="#">Another action</a></li>
-								<li class="divider"></li>
-								<li><a href="#">Wyloguj</a></li>
-							</ul></li>
+					
 					</ul>
 				</div>
 			</nav>
@@ -44,50 +35,51 @@
 
 
 	<div class="row">
-		<div class=" positionTeam col-lg-4 text-center">
-			<table id="tPositionTeam" class="table-bordered table-hover">
-				<thead>
-					<tr>
-						<th data-field="nameTeam">Team</th>
-						<th data-field="position">Pozycja</th>
-					</tr>
-					<tr ng-repeat="(nameTeam,position) in positionTeam">
-						<td>{{ nameTeam }}</td>
-						<td>{{ position }}</td>
-					</tr>
-				</thead>
-			</table>
-		</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="Bootstrap Thumbnail First" src="http://lorempixel.com/output/people-q-c-600-200-1.jpg" />
+						<div class="caption">
+							<h3>
+								Najnowsze Info
+							</h3>
 
-
-		<div class="scoreMatchs col-lg-4 text-center">
-			<table id="tScoreMatchs" class="table-bordered table-hover">
-				<thead>
-					<tr>
-						<th data-field="nameTeam">Teamy</th>
-						<th data-field="score">Wynik</th>
-					</tr>
-					<tr ng-repeat="(nameTeam,score) in scoreMatchs">
-						<td>{{ nameTeam }}</td>
-						<td>{{ score }}</td>
-					</tr>
-				</thead>
-			</table>
+							
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="Bootstrap Thumbnail Second" src="http://lorempixel.com/output/city-q-c-600-200-1.jpg" />
+						<div class="caption">
+							<h3>
+Pomoc 							</h3>
+							<p>
+Jakis tekst							</p>
+							
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="Bootstrap Thumbnail Third" src="http://lorempixel.com/output/sports-q-c-600-200-1.jpg" />
+						<div class="caption">
+							<h3>
+								Najnowsze info
+							</h3>
+							<p>
+nahniwsze info tez							</p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="futureMatch col-lg-4 text-center">
-			<table id="tFutureMatch" class="table-bordered table-hover">
-				<thead>
-					<tr class="success">
-						<th data-field="nameTeam">Teamy</th>
-						<th data-field="date">Data</th>
-					</tr>
-					<tr ng-repeat="(nameTeam,date) in futureMatchs">
-						<td>{{ nameTeam }}</td>
-						<td>{{ date }}</td>
-					</tr>
-				</thead>
-			</table>
-		</div>
+	</div>
+</div>
 	</div>
 </div>
 

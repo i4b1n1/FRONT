@@ -5,6 +5,12 @@ app.controller('loginController',
 
 			$scope.name = "  ";
 
+			$scope.create = function(){
+				
+				if(appService.zalogowany=="YES"){
+					$location.path("/create");
+				}
+			}
 			$scope.loguj = function() {
 				var key = $scope.key;
 				var login = $scope.login;
@@ -16,9 +22,11 @@ app.controller('loginController',
 						url = 'http://localhost:2990/logging/' + $scope.login
 								+ "/" + $scope.key).success(function(data) {
 					if (data.status == "true") {
-						$location.path("#/panel");
+						$location.path("/create");
 						appService.zalogowany = "YES";
+						
 					} else {
+						$location.path("/panel");
 						$scope.name = "Nie poprawny";
 					}
 				}).error(function(data) {
@@ -32,7 +40,8 @@ app.controller('loginController',
 
 app.controller('panelController',
 		function($scope, $http, $location, appService) {
-
+			
+	
 			var infoMatch;
 			$scope.showData = function(data) {
 				var infoMatch = data;
@@ -109,12 +118,25 @@ app.controller('scoreController',
 					$scope.name = "Problem z bazka";
 				});
 			}
+			
+			$scope.create = function(){
+				
+				if(appService.zalogowany=="YES"){
+					$location.path("/create");
+				}
+			}
 
 		});
 
 app.controller('createController', function($scope, $http, $location,
 		appService) {
 
+	$scope.create = function(){
+		
+		if(appService.zalogowany=="YES"){
+			$location.path("/create");
+		}
+	}
 
 	$scope.submitTeam = function() {
 
