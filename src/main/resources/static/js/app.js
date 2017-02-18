@@ -24,6 +24,9 @@ app.config(function($routeProvider) {
 	}).when('/kontakt', {
 		templateUrl : '/views/kontakt.html',
 		controller : 'panelController'
+	}).when('/create', {
+		templateUrl : '/views/create.html',
+		controller : 'createController'
 	}).otherwise({
 		redirectTo : '/'
 	});

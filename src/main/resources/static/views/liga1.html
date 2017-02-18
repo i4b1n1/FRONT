@@ -16,6 +16,7 @@
 								1</a></li>
 						<li><a ng-click="liga('l2')" href="#/liga2">Liga 2</a></li>
 						<li><a ng-click="liga('l3')" href="#/liga3">Liga 3</a></li>
+						<li><a id="createButton" href="#/create">Edycja</a></li>
 					</ul>
 
 					<ul class="nav navbar-nav navbar-right">
@@ -62,7 +63,8 @@
 				</thead>
 				<tbody>
 					<tr class="danger" ng-repeat="data in scoreMatchs"
-						data-toggle="modal" data-target="#myModal" ng-click="showData(data)">
+						data-toggle="modal" data-target="#myModal"
+						ng-click="showData(data)">
 						<td>{{ data.id }}</td>
 						<td>{{ data.team1.name }}</td>
 						<td>{{ data.team2.name }}</td>
@@ -115,57 +117,59 @@
 								<h4 class="modal-title">Modal Header</h4>
 							</div>
 							<div class="modal-body">
-							<div class="row">
-								<div class="teamFootbaler1 container-fluid col-lg-6 text-center">
-									<h2>Name : {{nameTeam1}}</h2>
-									<h2>Position : {{teamPos1}}</h2>
-									<table id="teamFootbaler1" class="table-bordered table-hover">
-										<thead>
-											<tr class="warning">
-												<th class="danger" data-field="id">#</th>
-												<th class="danger" data-field="Name  ">Name</th>
-												<th class="danger" data-field="Surname   ">Surname</th>
-												<th class="danger" data-field="Position">Position</th>
-												<th class="danger" data-field="Penalties">Penalties</th>
-											</tr>
+								<div class="row">
+									<div
+										class="teamFootbaler1 container-fluid col-lg-6 text-center">
+										<h2>Name : {{nameTeam1}}</h2>
+										<h2>Position : {{teamPos1}}</h2>
+										<table id="teamFootbaler1" class="table-bordered table-hover">
+											<thead>
+												<tr class="warning">
+													<th class="danger" data-field="id">#</th>
+													<th class="danger" data-field="Name  ">Name</th>
+													<th class="danger" data-field="Surname   ">Surname</th>
+													<th class="danger" data-field="Position">Position</th>
+													<th class="danger" data-field="Penalties">Penalties</th>
+												</tr>
 
-										</thead>
-										<tbody>
-											<tr class="danger" ng-repeat="data in listFootballer1">
-												<td>{{ data.id }}</td>
-												<td>{{ data.name }}</td>
-												<td>{{ data.surname}}</td>
-												<td>{{ data.position }}</td>
-												<td>{{ data.penalties }}</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-									<div class="teamFootbaler1 container-fluid col-lg-6 text-center">
-									<h2>Name : {{nameTeam2}}</h2>
-									<h2>Position : {{teamPos2}}</h2>
-									<table id="teamFootbaler2" class="table-bordered table-hover">
-										<thead>
-											<tr class="warning">
-												<th class="danger" data-field="id">#</th>
-												<th class="danger" data-field="Name  ">Name</th>
-												<th class="danger" data-field="Surname   ">Surname</th>
-												<th class="danger" data-field="Position">Position</th>
-												<th class="danger" data-field="Penalties">Penalties</th>
-											</tr>
+											</thead>
+											<tbody>
+												<tr class="danger" ng-repeat="data in listFootballer1">
+													<td>{{ data.id }}</td>
+													<td>{{ data.name }}</td>
+													<td>{{ data.surname}}</td>
+													<td>{{ data.position }}</td>
+													<td>{{ data.penalties }}</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div
+										class="teamFootbaler1 container-fluid col-lg-6 text-center">
+										<h2>Name : {{nameTeam2}}</h2>
+										<h2>Position : {{teamPos2}}</h2>
+										<table id="teamFootbaler2" class="table-bordered table-hover">
+											<thead>
+												<tr class="warning">
+													<th class="danger" data-field="id">#</th>
+													<th class="danger" data-field="Name  ">Name</th>
+													<th class="danger" data-field="Surname   ">Surname</th>
+													<th class="danger" data-field="Position">Position</th>
+													<th class="danger" data-field="Penalties">Penalties</th>
+												</tr>
 
-										</thead>
-										<tbody>
-											<tr class="danger" ng-repeat="data in listFootballer2">
-												<td>{{ data.id }}</td>
-												<td>{{ data.name }}</td>
-												<td>{{ data.surname}}</td>
-												<td>{{ data.position }}</td>
-												<td>{{ data.penalties }}</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
+											</thead>
+											<tbody>
+												<tr class="danger" ng-repeat="data in listFootballer2">
+													<td>{{ data.id }}</td>
+													<td>{{ data.name }}</td>
+													<td>{{ data.surname}}</td>
+													<td>{{ data.position }}</td>
+													<td>{{ data.penalties }}</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
 								</div>
 							</div>
 							<div class="modal-footer">
