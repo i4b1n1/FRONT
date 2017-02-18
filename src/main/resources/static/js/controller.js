@@ -119,7 +119,7 @@ app.controller('createController', function($scope, $http, $location,
 	$scope.submitTeam = function() {
 
 		$http.post(
-				url = 'http://localhost:2990/insert/team' + $scope.nazwaTeam + "/"+ $scope.ligaTeam + "/"+ $scope.pozycjaTeam).
+				url = 'http://localhost:2990/insert/team/' + nazwaTeam.value + "/"+ ligaTeam.value + "/"+ pozycjaTeam.value).
 				success(function(data) {
 					$scope.info = "Dodano team";
 		}).error(function(data) {
@@ -130,18 +130,18 @@ app.controller('createController', function($scope, $http, $location,
 	$scope.submitPrzyszly = function() {
 
 		$http.post(
-				url = 'http://localhost:2990/insert/przyszly' + $scope.team1Przyszly + "/"+ $scope.team2Przyszly + "/"+ $scope.dataPrzyszly + "/"+ $scope.ligaPrzyszly).
+				url = 'http://localhost:2990/insert/przyszly/' + team1Przyszly.value + "/"+ team2Przyszly.value + "/"+ dataPrzyszly.value + "/"+ ligaPrzyszly.value).
 				success(function(data) {
-					$scope.info = "Dodano";
+					$scope.info = "Dodano Przyzly";
 		}).error(function(data) {
-			$scope.info = " Nie Dodano";
+			$scope.info = " Nie Dodano przyszly";
 		});
 	}
 	
 	$scope.submitWynik = function() {
 
 		$http.post(
-				url = 'http://localhost:2990/insert/wynik' + $scope.team1Wynik + "/"+ $scope.team2Wynik + "/"+ $scope.dataWynik + "/"+ $scope.wynikWynik + "/"+ $scope.ligaWynik).
+				url = 'http://localhost:2990/insert/wynik' + team1Wynik.value + "/"+ team2Wynik.value + "/"+ dataWynik.value + "/"+ wynikWynik.value + "/"+ ligaWynik.value).
 				success(function(data) {
 					$scope.info = "Dodano Wynik";
 		}).error(function(data) {
@@ -149,14 +149,14 @@ app.controller('createController', function($scope, $http, $location,
 		});
 	}
 	
-	$scope.submitTeam = function() {
+	$scope.submitPilkarz= function() {
 
 		$http.post(
-				url = 'http://localhost:2990/insert/pilkarz'  + $scope.imiePilkarz + "/"+ $scope.nazwiskoPilkarz + "/"+ $scope.pozycjaPilkarz + "/"+ $scope.karyPilkarz + "/"+ $scope.ligaPilkarz ).
+				url = 'http://localhost:2990/insert/pilkarz'  + imiePilkarz.value + "/"+ nazwiskoPilkarz.value + "/"+ pozycjaPilkarz.value + "/"+ karyPilkarz.value + "/"+ ligaPilkarz.value ).
 				success(function(data) {
-					$scope.info = "Dodano team";
+					$scope.info = "Dodano Pilkarz";
 		}).error(function(data) {
-			$scope.info = " Nie Dodano teamu";
+			$scope.info = " Nie Dodano Pilkarz";
 		});
 	}
 

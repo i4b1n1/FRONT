@@ -29,6 +29,17 @@ public class MainController {
         return "index";
     }
     
+    @RequestMapping(value="insert/team/{nazwa}/{liga}/{pozycja}" ,method =  RequestMethod.POST)
+    public void insertTeam(@PathVariable("nazwa")String nazwa, @PathVariable("liga") String liga, @PathVariable("pozycja")   String pozycja){
+    	log.info("--- "+nazwa+ " " + liga +" " + pozycja);
+    	
+    }
+    //na te linki bedzie tworzenie ( funkcja insertTeam jest przykladowa do sprawdzeni czy dziala)
+    //'http://localhost:2990/insert/team/' + nazwaTeam.value + "/"+ ligaTeam.value + "/"+ pozycjaTeam.value
+    //'http://localhost:2990/insert/przyszly/' + team1Przyszly.value + "/"+ team2Przyszly.value + "/"+ dataPrzyszly.value + "/"+ ligaPrzyszly.value).
+    //'http://localhost:2990/insert/wynik' + team1Wynik.value + "/"+ team2Wynik.value + "/"+ dataWynik.value + "/"+ wynikWynik.value + "/"+ ligaWynik.value).
+    //'http://localhost:2990/insert/pilkarz'  + imiePilkarz.value + "/"+ nazwiskoPilkarz.value + "/"+ pozycjaPilkarz.value + "/"+ karyPilkarz.value + "/"+ ligaPilkarz.value ).
+    
     @RequestMapping(value="/logging/{login}/{key}",method = RequestMethod.GET)
     public  Map logging(@PathVariable("login")   String login,@PathVariable("key") String key){
     	
