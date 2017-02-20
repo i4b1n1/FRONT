@@ -5,5 +5,7 @@ app.service('appService', function() {
 	this.zalogowany="NO";
 	
 	this.create="NO";
+	
+	this.data;
 
 });

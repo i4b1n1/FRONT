@@ -41,9 +41,33 @@ app.controller('loginController',
 app.controller('panelController',
 		function($scope, $http, $location, appService) {
 			
-	
+			$scope.editData = function(){
+				
+				appService.incomingData=appService.data;
+				$scope.id=appService.incomingData.id;
+				$scope.team1name =appService.incomingData.team1.name;
+				$scope.team1score = appService.incomingData.scoreT1;
+				$scope.team2name =appService.incomingData.team2.name;
+				$scope.team2score = appService.incomingData.scoreT2;
+				$scope.date = appService.incomingData.date;
+				$scope.liga = appService.incomingData.judge
+			}
+			
+			$scope.saveEditData = function(){
+				
+				$http.post(
+						url = 'http://localhost:2990/save/' + $scope.id + "/"+ $scope.team1name + "/"+ $scope.team1score + "/"+ $scope.team2name + "/"+ $scope.team2score + "/"+ $scope.date.value + "/"+ $scope.liga).
+						success(function(data) {
+							$scope.info = "Dodano team";
+				}).error(function(data) {
+					$scope.info = " Nie Dodano teamu";
+				});	
+				
+			}
+			
 			var infoMatch;
 			$scope.showData = function(data) {
+				appService.data=data;
 				var infoMatch = data;
 				var team1Name = data.team1.name;
 				var team2Name = data.team2.name;
@@ -58,7 +82,7 @@ app.controller('panelController',
 				$scope.teamPos1 = data.team1.positionInLeague;
 				$scope.teamPos2 = data.team2.positionInLeague;
 			}
-
+			
 			$scope.liga = function(data) {
 				appService.idLeague = data;
 

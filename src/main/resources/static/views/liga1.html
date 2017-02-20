@@ -7,20 +7,20 @@
 		<div class="col-lg-12 text-center">
 			<nav class="navbar  navbar-inverse bg-inverse">
 				<div class="container-fluid">
-		
+
 					<ul class="nav navbar-nav">
 						<li><a ng-click="liga('all')" href="#/panel">Glowna</a></li>
 						<li class="active"><a ng-click="liga('l1')" href="#/liga1">Liga
 								1</a></li>
 						<li><a ng-click="liga('l2')" href="#/liga2">Liga 2</a></li>
 						<li><a ng-click="liga('l3')" href="#/liga3">Liga 3</a></li>
-						<li><a  ng-click="create()" id="createButton">Edycja</a></li> 
+						<li><a ng-click="create()" id="createButton">Edycja</a></li>
 					</ul>
 
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#/kontakt">Kontakt</a></li>
 						<li><a href="#/login">Logowanie</a></li>
-				
+
 					</ul>
 				</div>
 			</nav>
@@ -164,20 +164,65 @@
 								</div>
 							</div>
 							<div class="modal-footer">
-								<button type="button" class="btn btn-default"
-									data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-info btn-lg"
+									data-toggle="modal" data-target="#myModalEdycja"
+									ng-click="editData()">Open Modal</button>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default"
+										data-dismiss="modal">Close</button>
+								</div>
 							</div>
+
 						</div>
-
 					</div>
+					<!-- Modal  edycja--------------------------------------------------------- -->
+					<div class="modal fade" id="myModalEdycja" role="dialog">
+						<div class="modal-dialog">
+
+							<!-- Modal content-->
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h4 class="modal-title">Modal Header</h4>
+								</div>
+								<div class="modal-body">
+									<div class="row">
+
+										<div class="form-group">
+											<label> Team 1 Name </label> <input value="{{team1name}}" class="form-control"	id="team1name" />
+										</div>
+										<div class="form-group">
+											<label> Team 2 Score </label> <input value="{{team1score}}" class="form-control"	id="team1score" />
+										</div>
+										<div class="form-group">
+											<label> Team 2 Name </label> <input  value="{{team2name}}" class="form-control"	id="team2name" />
+										</div>
+										<div class="form-group">
+											<label>Team 2 Score </label> <input value="{{team2score}}" class="form-control"	id="" />
+										</div>
+										<div class="form-group">
+											<label> Date </label> <input value="{{date}}" class="form-control"	id="date" />
+										</div>
+										<div class="form-group">
+											<label> Liga </label> <input value="{{liga}}" class="form-control"	id="liga" />
+										</div>
+								
+									</div>
+								</div>
+
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default"
+										data-dismiss="modal" ng-click="saveEditData()">Save Edit Data</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
 				</div>
-
-
 			</div>
+
+
 		</div>
 
-
 	</div>
-
-</div>
-
