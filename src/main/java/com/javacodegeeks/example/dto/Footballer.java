@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-@AllArgsConstructor
 public class Footballer {
 	public Footballer(Integer id, String name, String surname, String team, String idLeague, String position,
 			String penalties) {
